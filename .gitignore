@@ -1,0 +1,47 @@
+# Secrets and local credentials
+.env
+.env.*
+*.pem
+*.key
+*token*
+*secret*
+*password*
+*credential*
+
+# Python and local runtime artifacts
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Raw data, caches, downloaded archives, and checkpoints
+data/
+outputs/cache/
+cache/
+checkpoints/
+models/
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# Raw image formats. TIFF manuscript figures are allowed.
+*.jpg
+*.jpeg
+*.png
+*.dcm
+
+# Local editor and OS files
+.DS_Store
+.~lock.*
+
+# Historical pre-edit artifacts retained in staging but not intended for upload
+*before_*
+archive/
+old_versions/

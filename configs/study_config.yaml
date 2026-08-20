@@ -1,0 +1,47 @@
+study:
+  name: mshf_beyond_confidence
+  primary_question: "Does MSHF-derived image quality add error-prediction value beyond calibrated confidence?"
+  primary_task: referable_dr
+  fixed_coverage: 0.80
+  seed: 20260817
+
+paths:
+  data_root: "${DATA_ROOT}"
+  mshf_root: "${DATA_ROOT}/MSHF_dataset_2.0/MSHF dataset 2.0"
+  deepdrid_root: "${DATA_ROOT}/DeepDRiD"
+  eyeq_root: "${DATA_ROOT}/EyeQ"
+  outputs: "outputs"
+
+mshf:
+  image_dirs:
+    - "Original/UWF-mosaic"
+    - "Original/CFP/DR-XJU"
+    - "Original/CFP/DR-ZJU"
+    - "Original/CFP/Glaucoma"
+    - "Original/CFP/Healthy"
+    - "Original/Portable_camera/Local1"
+    - "Original/Portable_camera/Local2"
+  label_workbook: "MSHF_quality_scores.xlsx"
+  individual_workbook: "Individual_scores.xlsx.xlsx"
+  quality_dimensions:
+    - illumination
+    - clarity
+    - contrast
+    - overall
+  preferred_labels: individual_majority
+
+splits:
+  mshf_strategy: source_stratified_train_val_test
+  note: "MSHF has no patient IDs locally; patient-level split requires external ID mapping."
+
+deepdrid:
+  source: "Zenodo DeepDRiD challenge release"
+  use_for:
+    - dr_classifier
+    - oof_error_gate
+    - locked_validation_if_available
+
+eyeq:
+  source: "EyeQ label files plus EyePACS images if available"
+  use_for:
+    - frozen_external_validation
