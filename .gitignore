@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+outputs/
+data/
+datasets/
+cache/
+derived_outputs/
+*.zip
+*.tar
+*.tar.gz

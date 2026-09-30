@@ -1,0 +1,18 @@
+Environment inventory for MSHF quality-confidence gating reproducibility materials
+
+Python executable: Conda Python interpreter on the analysis server
+Python version: 3.14.6
+Platform: Linux-7.0.0-28-generic-x86_64-with-glibc2.39
+
+Selected Python packages:
+- torch: 2.13.0+cu126
+- torchvision: 0.28.0+cu126
+- numpy: 2.4.6
+- pandas: 3.0.3
+- scikit-learn: 1.9.0
+- scipy: 1.18.0
+- Pillow: 12.3.0
+- python-docx: not importable (ModuleNotFoundError)
+- openpyxl: 3.1.5
+- matplotlib: 3.11.0
+- seaborn: 0.13.2
